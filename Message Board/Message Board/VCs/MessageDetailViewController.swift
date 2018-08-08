@@ -20,7 +20,15 @@ class MessageDetailViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func send(_ sender: Any) {
+        guard let thisMessageThread = messageThread,
+            let sender = textField.text,
+            let text = textView.text else { return }
         
+        messageThreadController?.createMessage(fromThread: thisMessageThread, text: text, sender: sender, completion: { (error) in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
     
