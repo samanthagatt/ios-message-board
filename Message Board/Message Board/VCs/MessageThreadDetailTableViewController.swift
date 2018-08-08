@@ -32,6 +32,12 @@ class MessageThreadDetailTableViewController: UITableViewController {
     }
 
     
+    // MARK: - Properties
+    
+    var messageThread: MessageThread?
+    var messageThreadController: MessageThreadController?
+    
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,23 +10,17 @@ import UIKit
 
 class MessageThreadsTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
-
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return messageThreadController.messageThreads.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageThreadCell", for: indexPath)
 
-        
+        let messageThread = messageThreadController.messageThreads[indexPath.row]
+        cell.textLabel?.text = messageThread.title
 
         return cell
     }
@@ -35,8 +29,17 @@ class MessageThreadsTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func submitMessageThread(_ sender: Any) {
+        guard let title = textField.text else { return }
+        messageThreadController.createMessageThread(title: title) { (error) in
+            if let error = error {
+                NSLog("Error creating new message thread: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
-    
     
     
     // MARK: - Outlets
@@ -47,12 +50,20 @@ class MessageThreadsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    
+    let messageThreadController = MessageThreadController()
     
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let segueID = "ShowMessageThreadDetails"
+        if segue.identifier == "ShowMessageThreadDetails" {
+            let destination = segue.destination as! MessageThreadDetailTableViewController
+            
+            destination.messageThreadController = messageThreadController
+            
+            guard let index = tableView.indexPathForSelectedRow?.row else { return }
+            let messageThread = messageThreadController.messageThreads[index]
+            destination.messageThread = messageThread
+        }
     }
 }
