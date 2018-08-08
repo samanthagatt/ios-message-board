@@ -12,6 +12,7 @@
 		D6F7F618211B707700F88B68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6F7F617211B707700F88B68 /* Assets.xcassets */; };
 		D6F7F61B211B707700F88B68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F7F619211B707700F88B68 /* LaunchScreen.storyboard */; };
 		D6F7F623211B735200F88B68 /* MessageThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F622211B735200F88B68 /* MessageThreadsTableViewController.swift */; };
+		D6F7F626211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F625211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D6F7F61A211B707700F88B68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6F7F61C211B707700F88B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F7F622211B735200F88B68 /* MessageThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadsTableViewController.swift; sourceTree = "<group>"; };
+		D6F7F625211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F7F622211B735200F88B68 /* MessageThreadsTableViewController.swift */,
+				D6F7F625211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6F7F623211B735200F88B68 /* MessageThreadsTableViewController.swift in Sources */,
+				D6F7F626211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift in Sources */,
 				D6F7F611211B707300F88B68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
