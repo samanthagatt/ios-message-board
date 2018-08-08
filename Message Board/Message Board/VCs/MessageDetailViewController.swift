@@ -13,20 +13,21 @@ class MessageDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     
     // MARK: - Actions
     
     @IBAction func send(_ sender: Any) {
+        
     }
     
+    
+    // MARK: - Properties
+    
+    var messageThread: MessageThread?
+    var messageThreadController: MessageThreadController?
     
 
     // MARK: - Outlets
