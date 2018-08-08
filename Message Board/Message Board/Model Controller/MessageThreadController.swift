@@ -106,7 +106,7 @@ class MessageThreadController {
             do {
                 let messageThreadDictionaries = try JSONDecoder().decode([String: MessageThread].self, from: data)
                 let messageThreads = messageThreadDictionaries.compactMap { $0.value }
-                self.messageThreads = messageThreads
+                self.messageThreads = messageThreads.sorted { $0.title.lowercased() < $1.title.lowercased() }
                 completion(nil)
             } catch {
                 NSLog("Error decoding fetched data: \(error)")

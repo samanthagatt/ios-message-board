@@ -19,6 +19,8 @@ class MessageThreadDetailTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        messageThread?.messages.sort { $0.timestamp < $1.timestamp }
         tableView.reloadData()
     }
 
@@ -42,6 +44,11 @@ class MessageThreadDetailTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    // MARK: - Refresh
+    
+    
 
     
     // MARK: - Properties
