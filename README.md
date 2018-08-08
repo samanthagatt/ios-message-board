@@ -177,7 +177,7 @@ required init(from decoder: Decoder) throws {
         let messagesDictionaries = try container.decodeIfPresent([String: MessageThread.Message].self, forKey: .messages)
         
         // 3
-        let messages = messagesDictionaries?.compactmap({ $0.value }) ?? []
+        let messages = messagesDictionaries?.compactMap({ $0.value }) ?? []
         
         // 4
         self.title = title
