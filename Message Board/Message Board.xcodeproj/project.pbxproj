@@ -15,6 +15,7 @@
 		D6F7F626211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F625211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift */; };
 		D6F7F628211B78CA00F88B68 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F627211B78CA00F88B68 /* MessageDetailViewController.swift */; };
 		D6F7F62B211B8FF900F88B68 /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F62A211B8FF900F88B68 /* MessageThread.swift */; };
+		D6F7F630211B95D000F88B68 /* MessageThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7F62F211B95D000F88B68 /* MessageThreadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D6F7F625211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadDetailTableViewController.swift; sourceTree = "<group>"; };
 		D6F7F627211B78CA00F88B68 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		D6F7F62A211B8FF900F88B68 /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
+		D6F7F62F211B95D000F88B68 /* MessageThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F7F629211B8FE700F88B68 /* Model */,
+				D6F7F62C211B95A800F88B68 /* Model Controller */,
 				D6F7F624211B735700F88B68 /* VCs */,
 				D6F7F614211B707300F88B68 /* Main.storyboard */,
 				D6F7F617211B707700F88B68 /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				D6F7F62A211B8FF900F88B68 /* MessageThread.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F7F62C211B95A800F88B68 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6F7F62F211B95D000F88B68 /* MessageThreadController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				D6F7F626211B75BB00F88B68 /* MessageThreadDetailTableViewController.swift in Sources */,
 				D6F7F62B211B8FF900F88B68 /* MessageThread.swift in Sources */,
 				D6F7F611211B707300F88B68 /* AppDelegate.swift in Sources */,
+				D6F7F630211B95D000F88B68 /* MessageThreadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

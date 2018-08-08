@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MessageThread: Codable {
+class MessageThread: Equatable, Codable {
     // MARK: - Properties
     let title: String
     let identifier: String
@@ -20,7 +20,11 @@ class MessageThread: Codable {
         let sender: String
         let timestamp: Date
         
-        init(text: String, sender: String, timestamp: Date = Date())
+        init(text: String, sender: String, timestamp: Date = Date()) {
+            self.text = text
+            self.sender = sender
+            self.timestamp = timestamp
+        }
     }
     
     // MARK: - Initializer
@@ -32,5 +36,10 @@ class MessageThread: Codable {
     
     // MARK: - Conform to equatable
     
-    
+    func == (lhs: MessageThread, rhs: MessageThread) -> Bool {
+        return
+            lhs.title == rhs.title &&
+                lhs.identifier == rhs.identifier &&
+                lhs.messages == rhs.messages
+    }
 }
