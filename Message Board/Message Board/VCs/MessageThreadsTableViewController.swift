@@ -13,10 +13,9 @@ class MessageThreadsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let refreshView = UIRefreshControl()
-        tableView.addSubview(refreshView)
-        refreshView.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshView.addTarget(self, action: #selector(fetch), for: .valueChanged)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(refresh), for: .valueChanged)
+        self.refreshControl = refreshControl
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +23,8 @@ class MessageThreadsTableViewController: UITableViewController {
         
         fetch()
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -43,7 +44,7 @@ class MessageThreadsTableViewController: UITableViewController {
     
     // MARK: - Functions
     
-    @objc func fetch() {
+    func fetch() {
         messageThreadController.fetchMessageThreads { (error) in
             if let error = error {
                 NSLog("Error fetching data: \(error)")
@@ -53,6 +54,10 @@ class MessageThreadsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @objc func refresh() {
+        fetch()
     }
     
     
